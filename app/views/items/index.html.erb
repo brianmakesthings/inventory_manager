@@ -1,0 +1,16 @@
+<h1>Inventory</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+    </tr>
+    <% @items.each do |item| %>
+        <tr>
+            <td><%= item.name%></td>
+            <td><%= item.quantity%></td>
+            <td><a href="/item/<%= item.id%>/edit">Edit</a></td>
+            <td><a href="/item/<%= item.id%>/delete">Delete</a></td>
+        </tr>
+    <% end %>
+</table>
