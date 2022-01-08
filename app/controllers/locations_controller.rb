@@ -1,7 +1,8 @@
 class LocationsController < ApplicationController
   def index
     @locations = Location.all
-    @locations_item_count = Item.group(:location).count
+    @locations_item_type_count = Item.group(:location).count
+    @locations_item_quantity_count = Item.group(:location).sum(:quantity)
   end
 
   def new
