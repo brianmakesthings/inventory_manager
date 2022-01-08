@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    @locations = Location.all
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path

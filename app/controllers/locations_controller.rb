@@ -2,7 +2,6 @@ class LocationsController < ApplicationController
   def index
     @locations = Location.all
     @locations_item_count = Item.group(:location).count
-    # Item.left_outer_join(:locations).groupselect("Location.name, COUNT(items.*)")
   end
 
   def new

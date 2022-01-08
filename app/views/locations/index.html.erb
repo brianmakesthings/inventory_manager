@@ -1,13 +1,17 @@
 <h1>Locations</h1>
 
-<%= link_to "New Location", new_location_path%>
-<%= link_to "View All Items", root_path%>
-<table>
+<h2>Actions</h2>
+<ul>
+<li><%= link_to "New Location", new_location_path%></li>
+<li><%= link_to "View All Items", root_path%></li>
+</ul>
+<h2>List of Locations</h2>
+<table class="data_table">
     <tr>
         <th>Name</th>
         <th>Item Count</th>
     </tr>
-    <% @locations.each do |location| %>
+    <% @locations.sort_by {|location| location.name}.each do |location| %>
         <tr>
             <td><%= link_to location.name, location%></td>
             <td><%= @locations_item_count[location] || 0%></td>

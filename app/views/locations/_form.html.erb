@@ -1,11 +1,15 @@
+<%= link_to "Back to All Locations", locations_path%>
+<br>
 <%= form_with model: location do |form| %>
   <div>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
     <% location.errors.full_messages_for(:name).each do |message| %>
-      <div><%= message %></div>
+      <div class="error_message"><%= message %></div>
     <% end %>
   </div>
+
+  <br>
 
   <div>
     <%= form.submit %>

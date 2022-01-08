@@ -1,25 +1,9 @@
 <h1>Inventory</h1>
 
 <h2>Actions</h2>
-<%= link_to "New Item", new_item_path%>
-<%= link_to "View All Locations", locations_path%>
+<ul>
+<li><%= link_to "New Item", new_item_path%></li>
+<li><%= link_to "View All Locations", locations_path%></li>
+</ul>
 <h2>List of Inventory</h2>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Quantity</th>
-        <th>Location</th>
-    </tr>
-    <% @items.sort_by {|item| item.created_at}.each do |item| %>
-        <tr>
-            <td><%= item.name%></td>
-            <td><%= item.quantity%></td>
-            <td><%= item.location.name%></td>
-            <td><%= link_to "Edit", edit_item_path(item)%></td> 
-            <td><%= link_to "Delete", item_path(item), data: {
-                turbo_method: :delete,
-                turbo_confirm: "Are you sure?"
-            } %></td> 
-        </tr>
-    <% end %>
-</table>
+<%= render "shared/itemTable", items: @items%>
