@@ -1,24 +1,14 @@
-# README
+# Inventory Manager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Currently running on https://arcane-ocean-20485.herokuapp.com/
 
-Things you may want to cover:
+## Start Up
+### With Docker (Preferred)
+Ensure you have [Docker](https://www.docker.com/) installed.
 
-* Ruby version
+```
+$ cd $projectDirectory
+$ docker-compose up
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Visit localhost:3000 in a web browser
