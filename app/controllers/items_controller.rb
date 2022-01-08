@@ -4,12 +4,12 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @locations = Location.all
     @item = Item.new
   end
 
   def create
     @item = Item.new(item_params)
-
     if @item.save
       redirect_to root_path
     else
@@ -19,11 +19,11 @@ class ItemsController < ApplicationController
 
   def edit 
     @item = Item.find(params[:id])
+    @locations = Location.all
   end
 
   def update 
     @item = Item.find(params[:id])
-
     if @item.update(item_params)
       redirect_to root_path
     else
@@ -40,6 +40,9 @@ class ItemsController < ApplicationController
 
   private
     def item_params
-      params.require(:item).permit(:name, :quantity)
+      @direct_params = params.require(:item).permit(:name, :quantity, :location)
+      @location = Location.find(@direct_params[:location])
+      @direct_params[:location] = @location
+      return @direct_params
     end
 end

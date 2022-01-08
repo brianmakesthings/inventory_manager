@@ -16,6 +16,11 @@
   </div>
 
   <div>
+    <%= form.label :location %><br>
+    <%= form.select :location, @locations.map { |location| [location.name, location.id]} if @locations %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

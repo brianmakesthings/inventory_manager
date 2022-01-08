@@ -1,16 +1,19 @@
-<h1>Inventory</h1>
-
+<h1><%= @location.name%></h1>
 <h2>Actions</h2>
-<%= link_to "New Item", new_item_path%>
-<%= link_to "View All Locations", locations_path%>
-<h2>List of Inventory</h2>
+<%=link_to "Edit", edit_location_path(@location)%>
+<%=link_to "Delete", location_path(@location), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+}%>
+<%= link_to "Back to All Locations", locations_path%>
+<h2>Items at Location</h2>
 <table>
     <tr>
         <th>Name</th>
         <th>Quantity</th>
         <th>Location</th>
     </tr>
-    <% @items.sort_by {|item| item.created_at}.each do |item| %>
+    <% @items_at_location.each do |item| %>
         <tr>
             <td><%= item.name%></td>
             <td><%= item.quantity%></td>
