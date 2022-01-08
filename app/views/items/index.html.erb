@@ -1,5 +1,7 @@
 <h1>Inventory</h1>
 
+<%= link_to "New Item", new_item_path%>
+
 <table>
     <tr>
         <th>Name</th>
@@ -9,8 +11,11 @@
         <tr>
             <td><%= item.name%></td>
             <td><%= item.quantity%></td>
-            <td><a href="/item/<%= item.id%>/edit">Edit</a></td>
-            <td><a href="/item/<%= item.id%>/delete">Delete</a></td>
+            <td><%= link_to "Edit", edit_item_path(item)%></td> 
+            <td><%= link_to "Delete", item_path(item), data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+            } %></td> 
         </tr>
     <% end %>
 </table>
