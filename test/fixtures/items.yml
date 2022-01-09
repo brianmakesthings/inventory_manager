@@ -3,7 +3,9 @@
 one:
   name: MyString
   quantity: 1
+  location: one
 
 two:
   name: MyString
   quantity: 1
+  location: two
