@@ -6,7 +6,7 @@ Currently running on https://arcane-ocean-20485.herokuapp.com/
 `$projectDirectory` is used to refer to where the root of the project located. Typically this will be `inventory_manager`
 
 ### With Docker (Preferred)
-Ensure you have [Docker](https://www.docker.com/). Note, at this time MacOS has been untested.
+Ensure you have [Docker](https://www.docker.com/) and that it is running. Note, at this time MacOS has been untested please use caution (especially if using ARM-based chips).
 
 #### For Windows Users Before Proceeding
 Run the following command to clone the project or download the zip. This is to ensure that the `entrypoint.sh` is using LF file endings.
