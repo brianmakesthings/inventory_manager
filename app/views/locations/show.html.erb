@@ -5,7 +5,7 @@
     <li><%=link_to "Edit", edit_location_path(@location)%></li>
     <li><%=link_to "Delete", location_path(@location), data: {
         turbo_method: :delete,
-        turbo_confirm: "This will delete all the location and all items associated. Are you sure?"
+        turbo_confirm: "This will delete the location and all items associated. Are you sure?"
     }%></li>
     <li><%= link_to "Back to All Locations", locations_path%></li>
     <li><%= link_to "New Item", new_item_path%></li>
