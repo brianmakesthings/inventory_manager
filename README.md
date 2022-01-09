@@ -21,6 +21,8 @@ Visit localhost:3000 in a web browser
 - View a list of them
 - Ability to create warehouses/locations and assign inventory to specific locations
 
+## Tests
+To run tests access the Docker shell and run `/inventoryApp/bin/rails test`
 ### Extensibility
 Currently two models: items and locations, each item must belong to some location.
 In the future, migrations could be written to transfer location information to a seperate table in order to list location history and timestamps
